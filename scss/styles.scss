@@ -2,6 +2,8 @@
 
 $box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 $white-color: #fff;
+$positive-color: #2ecc71;
+$negative-color: #c0392b;
 
 * {
 	box-sizing: border-box;
@@ -77,11 +79,11 @@ input {
 		margin: 5px 0;
 
 		&-plus {
-			color: #2ecc71;
+			color: $positive-color;
 		}
 
 		&-minus {
-			color: #c0392b;
+			color: $negative-color;
 		}
 	}
 }
@@ -102,11 +104,11 @@ input {
 		margin: 10px 0;
 
 		&.plus {
-			border-right: 5px solid #2ecc71;
+			border-right: 5px solid $positive-color;
 		}
 
 		&.minus {
-			border-right: 5px solid #c0392b;
+			border-right: 5px solid $negative-color;
 		}
 
 		&:hover {
