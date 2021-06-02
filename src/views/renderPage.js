@@ -29,16 +29,16 @@ const renderPage = () => {
 			<form id="form">
 				<div class="form-control">
 					<label for="text">Text</label>
-					<input type="text" id="text" placeholder="Enter Text" />
+					<input type="text" id="text" placeholder="Enter Name of Income / Expense" />
 				</div>
 				<div class="form-control">
 					<label for="amount"
 						>Amount <br />
-						(negative -expense, positive - income)</label
+						(negative -expense, positive +income)</label
 					>
-					<input type="number" id="amount" placeholder="Enter Amount" />
+					<input type="number" id="amount" placeholder="Enter Amount of Income / Expense" />
 				</div>
-				<button class="btn">Add Transactoin</button>
+				<button class="btn">Add Transaction</button>
 			</form>
 		</div>    
     `;
