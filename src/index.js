@@ -35,6 +35,7 @@ const dummyTransactions = [
 
 let transactions = dummyTransactions;
 
+// Add transactions to DOM list
 const addTransactionDOM = () => {
 	transactions.forEach(transaction => {
 		const item = document.createElement('li');
@@ -55,4 +56,30 @@ const addTransactionDOM = () => {
 	});
 };
 
-addTransactionDOM();
+const updateValues = () => {
+	const amounts = transactions.map(transaction => transaction.amount);
+
+	const total = amounts.reduce((acc, amount) => (acc += amount), 0).toFixed(2);
+
+	const income = amounts
+		.filter(amount => amount > 0)
+		.reduce((acc, amount) => (acc += amount), 0)
+		.toFixed(2);
+
+	const expense = amounts
+		.filter(amount => amount < 0)
+		.reduce((acc, amount) => ((acc += amount), 0) * -1)
+		.toFixed(2);
+
+	balance.textContent = `$${total}`;
+	moneyPlus.textContent = `$${income}`;
+	moneyMinus.textContent = `$${expense}`;
+};
+
+const init = () => {
+	list.innerHTML = '';
+	addTransactionDOM();
+	updateValues();
+};
+
+init();
